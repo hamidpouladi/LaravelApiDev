@@ -16,7 +16,7 @@ class PostController extends Controller
 
     public function store(StorePostRequest $request, Topic $topic, Post $post)
     {
-        $this->post = new $post;
+        $this->post = $post;
         $this->post->body = $request->body;
         $this->post->user()->associate($request->user());
 

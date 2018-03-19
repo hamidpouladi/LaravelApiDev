@@ -18,11 +18,11 @@ class TopicController extends Controller
     public function store(StoreTopicRequest $request, Topic $topic, Post $post)
     {
 
-        $this->topic = new $topic;
+        $this->topic = $topic;
         $this->topic->title = $request->title;
         $this->topic->user()->associate($request->user());
 
-        $this->post = new $post;
+        $this->post = $post;
         $this->post->body = $request->body;
         $this->post->user()->associate($request->user());
 

@@ -12,7 +12,7 @@ class RegisterController extends Controller
 
     public function register(StoreUserRequest $request, User $user)
     {
-        $this->user = new $user;
+        $this->user = $user;
         $this->user->username = $request->username;
         $this->user->email = $request->email;
         $this->user->password = bcrypt($request->password);
